@@ -12,6 +12,11 @@ public class Util {
 
     }
 
+    /**
+     * Convert the list of strings to Matrix
+     * @param strings
+     * @return
+     */
     public static Matrix<Character> convertStringsToMatrix(String[] strings) {
 
         Matrix<Character> matrix = new Matrix<>(strings.length);

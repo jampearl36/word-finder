@@ -7,6 +7,9 @@ import java.util.Set;
 
 /**
  * Created by ktangirala on 7/3/17.
+ *
+ * A Main class which uses the horizontal/vertical and diagonal finders
+ * to find words in a matrix
  */
 public class Main {
 

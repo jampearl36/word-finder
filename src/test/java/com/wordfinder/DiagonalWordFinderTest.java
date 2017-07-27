@@ -1,5 +1,6 @@
 package com.wordfinder;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.HashSet;
@@ -19,13 +20,16 @@ public class DiagonalWordFinderTest {
         wordFinder = new DiagonalWordFinder(dictionary);
     }
 
+    @Before
+    public void before() {
+        setUp(createDictionaryAllValidWordsAndPrefix());
+    }
+
     @Test
     public void emptyListOfStrings() {
 
         final String[] strings = new String[] {};
         Matrix<Character> matrix = Util.convertStringsToMatrix(strings);
-
-        setUp(createDictionaryAllValidWordsAndPrefix());
 
         Set<String> set = wordFinder.findWords(matrix);
         assertEquals("The set should be empty", 0, set.size());
@@ -36,8 +40,6 @@ public class DiagonalWordFinderTest {
 
         final String[] strings = new String[] {"ab"};
         Matrix<Character> matrix = Util.convertStringsToMatrix(strings);
-
-        setUp(createDictionaryAllValidWordsAndPrefix());
 
         Set<String> set = wordFinder.findWords(matrix);
         assertEquals("The set should be of size 2", 2, set.size());
@@ -55,8 +57,6 @@ public class DiagonalWordFinderTest {
 
         final String[] strings = new String[] {"ab", "de"};
         Matrix<Character> matrix = Util.convertStringsToMatrix(strings);
-
-        setUp(createDictionaryAllValidWordsAndPrefix());
 
         Set<String> set = wordFinder.findWords(matrix);
         assertEquals("The set should be of size 8", 8, set.size());
@@ -80,8 +80,6 @@ public class DiagonalWordFinderTest {
 
         final String[] strings = new String[] {"ab", "d"};
         Matrix<Character> matrix = Util.convertStringsToMatrix(strings);
-
-        setUp(createDictionaryAllValidWordsAndPrefix());
 
         Set<String> set = wordFinder.findWords(matrix);
         assertEquals("The set should be of size 5", 5, set.size());

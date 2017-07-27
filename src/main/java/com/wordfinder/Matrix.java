@@ -5,6 +5,11 @@ import java.util.List;
 
 /**
  * Created by ktangirala on 7/3/17.
+ *
+ * This denotes a 2 dimensional array. But unlike
+ * a 2 dimensional array, space is not wasted if a
+ * particular row has lesser number of columns when compared to
+ * a row with max length of columns.
  */
 public class Matrix<E> {
 

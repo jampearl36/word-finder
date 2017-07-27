@@ -4,6 +4,10 @@ import java.util.Set;
 
 /**
  * Created by ktangirala on 7/5/17.
+ *
+ * Extends the WordFinder class and defines the direction
+ * to go for the DFS algorithm. In this case the directions are
+ * left and right diagonals
  */
 public class DiagonalWordFinder extends WordFinder {
 

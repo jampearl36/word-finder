@@ -5,6 +5,9 @@ import java.util.Map;
 
 /**
  * Created by ktangirala on 7/3/17.
+ *
+ * A TrieDictionary backed by a trie to find valid prefixes
+ * and words
  */
 public class TrieDictionary implements Dictionary {
 

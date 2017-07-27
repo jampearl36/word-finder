@@ -20,13 +20,16 @@ public class HorizontalVerticalWordFinderTest {
         wordFinder = new HorizontalVerticalWordFinder(dictionary);
     }
 
+    @Before
+    public void before() {
+        setUp(createDictionaryAllValidWordsAndPrefix());
+    }
+
     @Test
     public void emptyListOfStrings() {
 
         final String[] strings = new String[] {};
         Matrix<Character> matrix = Util.convertStringsToMatrix(strings);
-
-        setUp(createDictionaryAllValidWordsAndPrefix());
 
         Set<String> set = wordFinder.findWords(matrix);
         assertEquals("The set should be empty", 0, set.size());
@@ -37,8 +40,6 @@ public class HorizontalVerticalWordFinderTest {
 
         final String[] strings = new String[] {"ab"};
         Matrix<Character> matrix = Util.convertStringsToMatrix(strings);
-
-        setUp(createDictionaryAllValidWordsAndPrefix());
 
         Set<String> set = wordFinder.findWords(matrix);
         assertEquals("The set should be of size 4", 4, set.size());
@@ -58,8 +59,6 @@ public class HorizontalVerticalWordFinderTest {
         final String[] strings = new String[] {"ab", "de"};
         Matrix<Character> matrix = Util.convertStringsToMatrix(strings);
 
-        setUp(createDictionaryAllValidWordsAndPrefix());
-
         Set<String> set = wordFinder.findWords(matrix);
         assertEquals("The set should be of size 28", 28, set.size());
     }
@@ -69,8 +68,6 @@ public class HorizontalVerticalWordFinderTest {
 
         final String[] strings = new String[] {"ab", "d"};
         Matrix<Character> matrix = Util.convertStringsToMatrix(strings);
-
-        setUp(createDictionaryAllValidWordsAndPrefix());
 
         Set<String> set = wordFinder.findWords(matrix);
         assertEquals("The set should be of size 9", 9, set.size());

@@ -4,6 +4,12 @@ import java.util.*;
 
 /**
  * Created by ktangirala on 7/3/17.
+ * Abstract WordFinder which implements the dfs algorithm to find
+ * valid prefixes and words in the dictionary
+ *
+ * Subclasses should implement the abstract method goInDirection to
+ * choose the direction to goto. For e.g. either horizontal/vertical
+ * or diagonal
  */
 public abstract class WordFinder {
 
@@ -28,6 +34,16 @@ public abstract class WordFinder {
 
     }
 
+    /**
+     * The dfs algorithm proceeds only if the prefix found so far is valid and stores
+     * the word in the result if the word is found in the dictionary
+     * @param matrix
+     * @param row
+     * @param col
+     * @param prefix
+     * @param visited
+     * @param result
+     */
     protected void dfs(final Matrix<Character> matrix, final int row, final int col, StringBuilder prefix,
                      final Matrix<Boolean> visited, final Set<String> result) {
 
@@ -61,6 +77,16 @@ public abstract class WordFinder {
 
     }
 
+    /**
+     * Subclasses should implement this method to define the direction to go
+     * given a row and a column.
+     * @param matrix
+     * @param row
+     * @param col
+     * @param prefix
+     * @param visited
+     * @param result
+     */
     protected abstract void goInDirection(final Matrix<Character> matrix, final int row, final int col, final StringBuilder prefix,
                                           final Matrix<Boolean> visited, final Set<String> result);
 }

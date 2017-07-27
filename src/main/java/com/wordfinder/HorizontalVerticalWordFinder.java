@@ -4,6 +4,9 @@ import java.util.Set;
 
 /**
  * Created by ktangirala on 7/4/17.
+ * Extends the WordFinder class and defines the direction
+ * to go for the DFS algorithm. In this case the directions are
+ * horizontal and vertical.
  */
 public class HorizontalVerticalWordFinder extends WordFinder {
 
